@@ -1,0 +1,447 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "agents": {
+    "explore": {
+      "model": "hai-openai/gpt-6-luna"
+    },
+    "plan": {
+      "model": "hai-openai/gpt-6.1-sol"
+    },
+    "title": {
+      "model": "hai-openai/gpt-6-luna"
+    }
+  },
+  "experimental": {
+    "policies": [
+      {
+        "action": "provider.use",
+        "effect": "deny",
+        "resource": "*"
+      },
+      {
+        "action": "provider.use",
+        "effect": "allow",
+        "resource": "hai-anthropic"
+      },
+      {
+        "action": "provider.use",
+        "effect": "allow",
+        "resource": "hai-openai"
+      },
+      {
+        "action": "provider.use",
+        "effect": "allow",
+        "resource": "hai-google"
+      },
+      {
+        "action": "provider.use",
+        "effect": "allow",
+        "resource": "hai-litellm"
+      },
+      {
+        "action": "provider.use",
+        "effect": "allow",
+        "resource": "github-copilot"
+      }
+    ]
+  },
+  "model": "hai-openai/gpt-6.1-sol",
+  "providers": {
+    "hai-anthropic": {
+      "canonical": "anthropic",
+      "models": {
+        "claude-haiku-4-5": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 64000
+          },
+          "name": "Haiku 4.5"
+        },
+        "claude-opus-4-5": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 64000
+          },
+          "name": "Opus 4.5"
+        },
+        "claude-opus-4-6": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          },
+          "name": "Opus 4.6"
+        },
+        "claude-opus-4-7": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 128000
+          },
+          "name": "Opus 4.7"
+        },
+        "claude-opus-4-8": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 128000
+          },
+          "name": "Opus 4.8"
+        },
+        "claude-sonnet-4-5": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 64000
+          },
+          "name": "Sonnet 4.5"
+        },
+        "claude-sonnet-4-6": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          },
+          "name": "Sonnet 4.6"
+        },
+        "claude-sonnet-4-6[1m]": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 128000
+          },
+          "modelID": "claude-sonnet-4-6",
+          "name": "Sonnet 4.6 (1M context)"
+        }
+      },
+      "name": "HAI Anthropic",
+      "settings": {
+        "apiKey": "822d5c23-11e9-4fbc-b367-51f8f00ca13d",
+        "baseURL": "http://localhost:6655/anthropic/v1"
+      }
+    },
+    "hai-google": {
+      "canonical": "google",
+      "models": {
+        "gemini-2.5-flash": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 65536
+          }
+        },
+        "gemini-2.5-flash-lite": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 65535
+          }
+        },
+        "gemini-2.5-pro": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 65536
+          }
+        },
+        "gemini-3.1-flash-lite": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 65536
+          }
+        },
+        "gemini-3.5-flash": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 65536
+          }
+        },
+        "gemini-3.8-flash": {
+          "limit": {
+            "context": 1000000,
+            "input": 1000000,
+            "output": 65536
+          }
+        }
+      },
+      "name": "HAI Gemini",
+      "settings": {
+        "apiKey": "822d5c23-11e9-4fbc-b367-51f8f00ca13d",
+        "baseURL": "http://localhost:6655/gemini/v1beta"
+      }
+    },
+    "hai-litellm": {
+      "models": {
+        "claude-haiku-4-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "name": "Haiku 4.5"
+        },
+        "claude-opus-4-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "name": "Opus 4.5"
+        },
+        "claude-opus-4-6": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "Opus 4.6"
+        },
+        "claude-opus-4-7": {
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "name": "Opus 4.7"
+        },
+        "claude-opus-4-8": {
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "name": "Opus 4.8"
+        },
+        "claude-sonnet-4-5": {
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "name": "Sonnet 4.5"
+        },
+        "claude-sonnet-4-6": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "Sonnet 4.6"
+        },
+        "claude-sonnet-4-6[1m]": {
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "modelID": "claude-sonnet-4-6",
+          "name": "Sonnet 4.6 (1M context)"
+        },
+        "gemini-2.5-flash": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "name": "Gemini 2.5 Flash"
+        },
+        "gemini-2.5-flash-lite": {
+          "limit": {
+            "context": 1000000,
+            "output": 65535
+          },
+          "name": "Gemini 2.5 Flash Lite"
+        },
+        "gemini-2.5-pro": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "name": "Gemini 2.5 Pro"
+        },
+        "gemini-3.1-flash-lite": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "name": "Gemini 3.1 Flash Lite"
+        },
+        "gemini-3.5-flash": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "name": "Gemini 3.5 Flash"
+        },
+        "gemini-3.8-flash": {
+          "limit": {
+            "context": 1000000,
+            "output": 65536
+          },
+          "name": "Gemini 3.8 Flash"
+        },
+        "gpt-4.1": {
+          "limit": {
+            "context": 200000,
+            "output": 32768
+          },
+          "name": "GPT-4.1"
+        },
+        "gpt-4.1-mini": {
+          "limit": {
+            "context": 200000,
+            "output": 32768
+          },
+          "name": "GPT-4.1 mini"
+        },
+        "gpt-5": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "GPT-5"
+        },
+        "gpt-5-mini": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "GPT-5 mini"
+        },
+        "gpt-5.4": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "GPT-5.4"
+        },
+        "gpt-5.5": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "GPT-5.5"
+        },
+        "gpt-5.6-luna": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "GPT-5.6 Luna"
+        },
+        "gpt-5.6-sol": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "GPT-5.6 Sol"
+        },
+        "gpt-5.6-terra": {
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "name": "GPT-5.6 Terra"
+        },
+        "gpt-6-astra": {
+          "limit": {
+            "context": 1050000,
+            "output": 128000
+          },
+          "name": "GPT-6 Astra"
+        },
+        "gpt-6-luna": {
+          "limit": {
+            "context": 1050000,
+            "output": 128000
+          },
+          "name": "GPT-6 Luna"
+        },
+        "gpt-6.1-sol": {
+          "limit": {
+            "context": 1050000,
+            "output": 128000
+          },
+          "name": "GPT-6.1 Sol"
+        }
+      },
+      "name": "HAI LiteLLM",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "apiKey": "822d5c23-11e9-4fbc-b367-51f8f00ca13d",
+        "baseURL": "http://localhost:6655/litellm/v1"
+      }
+    },
+    "hai-openai": {
+      "canonical": "openai",
+      "models": {
+        "gpt-5": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          }
+        },
+        "gpt-5.4": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          }
+        },
+        "gpt-5.5": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          }
+        },
+        "gpt-5.6-luna": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          }
+        },
+        "gpt-5.6-sol": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          }
+        },
+        "gpt-5.6-terra": {
+          "limit": {
+            "context": 200000,
+            "input": 200000,
+            "output": 128000
+          }
+        },
+        "gpt-6-astra": {
+          "limit": {
+            "context": 1050000,
+            "input": 1050000,
+            "output": 128000
+          }
+        },
+        "gpt-6-luna": {
+          "limit": {
+            "context": 1050000,
+            "input": 1050000,
+            "output": 128000
+          }
+        },
+        "gpt-6.1-sol": {
+          "limit": {
+            "context": 1050000,
+            "input": 1050000,
+            "output": 128000
+          }
+        }
+      },
+      "name": "HAI OpenAI",
+      "settings": {
+        "apiKey": "822d5c23-11e9-4fbc-b367-51f8f00ca13d",
+        "baseURL": "http://localhost:6655/openai/v1",
+        "transport": "http"
+      }
+    }
+  },
+  "share": "disabled",
+  "websearch": false
+}

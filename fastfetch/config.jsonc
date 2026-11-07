@@ -1,0 +1,65 @@
+{
+    "logo": "Arch",
+    "modules": [
+        {
+            "type": "os",
+            "key": "OS"
+        },
+        {
+            "type": "host",
+            "key": "Host"
+        },
+        {
+            "type": "kernel",
+            "key": "Kernel"
+        },
+        {
+            "type": "uptime",
+            "key": "Uptime"
+        },
+        {
+            "type": "packages",
+            "key": "Packages"
+        },
+        {
+            "type": "shell",
+            "key": "Shell"
+        },
+        {
+            "type": "display",
+            "key": "Display"
+        },
+        {
+            "type": "font",
+            "key": "Font"
+        },
+        {
+            "type": "cpu",
+            "key": "CPU"
+        },
+        {
+            "type": "gpu",
+            "key": "GPU"
+        },
+        {
+            "type": "memory",
+            "key": "Memory"
+        },
+        {
+            "type": "swap",
+            "key": "Swap"
+        },
+        {
+            "type": "disk",
+            "key": "Disk"
+        },
+        {
+            "type": "battery",
+            "key": "Battery"
+        },
+        {
+            "type": "localip",
+            "key": "Local IP"
+        }
+    ]
+}
